@@ -139,3 +139,5 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+# Debug
+homework_01/debug.py
