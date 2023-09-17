@@ -45,17 +45,6 @@ async def create_users(session: AsyncSession, users_data: list) -> None:
     await session.commit()
 
 
-async def get_users(session: AsyncSession) -> list[User]:
-    tmp = (
-        select(User)
-        .order_by(User.id)
-    )
-    result: Result = await session.execute(tmp)
-    users: list[User] = result.scalars().all()
-    print(users)
-    return users
-
-
 async def create_post(session: AsyncSession, title: str, user_id: int, body: str = "") -> None:
     post = Post(title=title, body=body, user_id=user_id)
     session.add(post)
@@ -73,16 +62,6 @@ async def create_posts(session: AsyncSession, posts_data: list) -> None:
         for el in posts_data
     ]
     session.add_all(posts)
-    await session.commit()
-
-
-async def delete_user(session: AsyncSession, user_id: int) -> None:
-    tmp = (
-        delete(User)
-        .where(User.id == user_id)
-
-    )
-    await session.execute(tmp)
     await session.commit()
 
 
