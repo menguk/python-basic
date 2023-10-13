@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "homework-04"
+version = "0.1.0"
+description = ""
+authors = ["sar0868 <safarov-ar@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+aiohttp = "^3.8.5"
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.20"}
+asyncpg = "^0.28.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
