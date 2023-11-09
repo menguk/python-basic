@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Index page
+{% endblock %}
+
+{% block head %}
+  <style>
+    /* CSS - cascade style sheets */
+    /*
+    html {
+      font-size: 22pt;
+    }
+     */
+  </style>
+{% endblock %}
+
+{% block body %}
+
+  <p class="h4">Links:</p>
+  <ul>
+    <li>
+      <a href="{{ url_for('products_app.list') }}">Products</a>
+    </li>
+    <li>
+      <a href="{{ url_for('items_app.next-item') }}">Items loader</a>
+    </li>
+  </ul>
+{% endblock %}
