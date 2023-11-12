@@ -5,7 +5,7 @@ from flask import request
 from flask import render_template
 
 from flask_migrate import Migrate
-from flask_wtf.csrf import CSRFProtect
+#from flask_wtf.csrf import CSRFProtect
 
 from models import db
 from views.items import items_app
@@ -21,7 +21,7 @@ app.config.from_object(config_object)
 
 db.init_app(app)
 migrate = Migrate(app=app, db=db)
-csrf = CSRFProtect(app)
+#csrf = CSRFProtect(app)
 
 
 @app.get("/", endpoint="index")
